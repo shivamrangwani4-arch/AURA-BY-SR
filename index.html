@@ -488,7 +488,7 @@
         <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">
           Receive private invitations to limited harvest batches and enjoy 20% off your inaugural order with code <strong class="gold">ROYAL20</strong>.
         </p>
-        <form onsubmit="event.preventDefault(); showToast('Welcome to the Aura VIP Circle! Code ROYAL20 is now active.');" style="display: flex; gap: 8px;">
+        <form onsubmit="handleNewsletterSignup(event)" style="display: flex; gap: 8px;">
           <input type="email" placeholder="Your luxury email" required style="flex-grow: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); padding: 11px 14px; border-radius: 4px; color: #fff; font-size: 0.82rem; outline: none;">
           <button type="submit" class="btn-primary" style="padding: 0 18px; font-size: 0.75rem;">JOIN</button>
         </form>
@@ -613,6 +613,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

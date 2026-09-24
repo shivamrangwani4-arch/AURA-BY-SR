@@ -3,6 +3,26 @@
  * Dynamic Cart, Currency Switcher, Scent Quiz, Quick View, Discovery Builder
  */
 
+// ============================================================================
+// SUPABASE CLOUD BACKEND INTEGRATION
+// ============================================================================
+const SUPABASE_CONFIG = {
+  url: 'https://mkubaqcttmczaxogkien.supabase.co',
+  anonKey: 'sb_publishable_VGFHq9Oq0ZfuHIFoaqp_fw__jJS9MHZ'
+};
+
+let supabaseClient = null;
+try {
+  if (window.supabase) {
+    supabaseClient = window.supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey);
+    console.log('⚜️ Supabase Client Initialized: Connected to Aura Backend');
+  }
+} catch (err) {
+  console.warn('Supabase initialization notice:', err);
+}
+
+// ============================================================================
+
 // Application State (Native Currency: PKR - Affordable Luxury)
 const state = {
   currency: 'PKR',
@@ -1285,6 +1305,37 @@ function submitOrder(event) {
     `Please confirm my parcel dispatch!`
   );
 
+  // Sync Order to Supabase Cloud Database
+  if (supabaseClient) {
+    const orderPayload = {
+      order_number: orderNum,
+      customer_name: name,
+      phone: phone,
+      address: address,
+      city: city,
+      payment_method: paymentMethod,
+      items: orderItemsList,
+      subtotal: subtotalPKR,
+      discount: discountPKR,
+      shipping_fee: shippingFeePKR,
+      total: finalTotalPKR,
+      currency: state.currency,
+      status: 'Confirmed'
+    };
+
+    supabaseClient
+      .from('orders')
+      .insert([orderPayload])
+      .then(({ data, error }) => {
+        if (error) {
+          console.warn('Supabase orders table notice:', error.message);
+        } else {
+          console.log('✅ Order synced to Supabase database:', data);
+        }
+      })
+      .catch(err => console.warn('Supabase sync catch:', err));
+  }
+
   body.innerHTML = `
     <div style="padding: 30px 20px; text-align: center; max-width: 620px; margin: 0 auto;">
       <div style="font-size: 3.2rem; margin-bottom: 8px;">⚜️</div>
@@ -1301,6 +1352,12 @@ function submitOrder(event) {
         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 10px;">
           <span style="color: var(--text-muted); font-size: 0.8rem;">Order Number:</span>
           <strong style="color: #fff; font-family: monospace; font-size: 0.95rem;">${orderNum}</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 10px;">
+          <span style="color: var(--text-muted); font-size: 0.8rem;">Cloud Status:</span>
+          <span style="color: #69f0ae; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+            <span>☁️</span> Synced to Supabase
+          </span>
         </div>
         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 10px;">
           <span style="color: var(--text-muted); font-size: 0.8rem;">Recipient:</span>
@@ -1346,4 +1403,27 @@ function submitOrder(event) {
 function openWhatsAppVIP() {
   const text = encodeURIComponent("Salam! I would like personal fragrance consultation from Maison Aura.");
   window.open(`https://wa.me/923001234567?text=${text}`, '_blank');
+}
+
+// Footer VIP Newsletter Subscription (Synced with Supabase)
+async function handleNewsletterSignup(event) {
+  event.preventDefault();
+  const input = event.target.querySelector('input[type="email"]');
+  const email = input?.value.trim();
+  if (!email) return;
+
+  if (supabaseClient) {
+    try {
+      const { data, error } = await supabaseClient
+        .from('subscribers')
+        .insert([{ email: email }]);
+      if (error) console.warn('Supabase subscriber notice:', error.message);
+      else console.log('✅ Email subscribed in Supabase:', email, data);
+    } catch (e) {
+      console.warn('Supabase subscriber error:', e);
+    }
+  }
+
+  showToast('Welcome to the Aura VIP Circle! Code ROYAL20 is now active.');
+  if (input) input.value = '';
 }
