@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA FRAGRANCES — Maison de Haute Parfumerie</title>
+  <meta name="description" content="Aura Fragrances. Artisanal extraits de parfum, rare Cambodian oud, nocturnal roses, and hand-poured scented candles. Crafted for an unforgettable presence.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <div class="announcement-bar">
+    <div class="ticker-wrap">
+      <div class="ticker-item">
+        <span>✦</span> Welcome to Maison Aura • The House of Haute Parfumerie <span>✦</span>
+      </div>
+      <div class="ticker-item">
+        Complimentary Luxury Delivery Across Pakistan on Orders Over Rs. 4,000
+      </div>
+      <div class="ticker-item">
+        Use Code <span class="gold">ROYAL20</span> for 20% Privileged Savings
+      </div>
+      <div class="ticker-item">
+        Handcrafted Extraits de Parfum • Infused with 30% to 40% Pure Organic Oils
+      </div>
+      <div class="ticker-item">
+        Complimentary Gold-Embossed Keepsake Box & 2 Discovery Vials with Every Flacon
+      </div>
+      <!-- Seamless loop duplicate -->
+      <div class="ticker-item">
+        <span>✦</span> Welcome to Maison Aura • The House of Haute Parfumerie <span>✦</span>
+      </div>
+      <div class="ticker-item">
+        Complimentary Luxury Delivery Across Pakistan on Orders Over Rs. 4,000
+      </div>
+      <div class="ticker-item">
+        Use Code <span class="gold">ROYAL20</span> for 20% Privileged Savings
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Left: Mobile Menu & Search -->
+      <div class="header-left">
+        <button id="mobile-menu-btn" class="header-btn" aria-label="Open Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <button id="search-toggle-btn" class="header-btn" aria-label="Search Fragrances">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center: Aura Fragrances Crest & Logo -->
+      <div class="header-logo-wrap">
+        <a href="#hero" aria-label="Aura Fragrances Home" class="brand-link">
+          <img src="assets/images/logo.svg" alt="AURA FRAGRANCES" class="header-logo-img">
+        </a>
+      </div>
+
+      <!-- Right: Currency (PKR Default), Account, Cart Bag -->
+      <div class="header-right">
+        <select id="currency-selector" class="currency-select" aria-label="Select Currency">
+          <option value="PKR" selected>PKR (Rs.)</option>
+          <option value="USD">USD ($)</option>
+          <option value="AED">AED (د.إ)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="EUR">EUR (€)</option>
+        </select>
+
+        <button class="header-btn" aria-label="User Account" onclick="showToast('Aura VIP Portal: Privileged Access Active')">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <button id="cart-toggle-btn" class="header-btn cart-icon-wrap" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span id="cart-badge-count" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Desktop Menu Bar -->
+    <nav class="desktop-nav">
+      <a href="#perfumes" class="nav-link">The 15 Signatures</a>
+      <a href="#men-section" class="nav-link">Aura Homme</a>
+      <a href="#women-section" class="nav-link">Aura Femme</a>
+      <a href="#unisex-section" class="nav-link">Aura Privée</a>
+      <a href="#reviews-section" class="nav-link">Celebrity Stories</a>
+      <a href="#candles-section" class="nav-link">Scented Candles</a>
+      <a href="#discovery-builder" class="nav-link">Discovery Vault</a>
+      <a href="#ingredients-section" class="nav-link">Rare Botanicals</a>
+      <a href="javascript:void(0)" class="nav-link highlight open-quiz-trigger">✦ Scent Quiz</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div>
+      <div class="drawer-header">
+        <img src="assets/images/logo.svg" alt="AURA FRAGRANCES" style="height: 48px; max-width: 210px;">
+        <button id="close-drawer-btn" class="drawer-close">&times;</button>
+      </div>
+      <div class="drawer-nav">
+        <a href="#perfumes" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>The 15 Signatures</span> <span>→</span>
+        </a>
+        <a href="#men-section" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Aura Homme</span> <span>→</span>
+        </a>
+        <a href="#women-section" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Aura Femme</span> <span>→</span>
+        </a>
+        <a href="#unisex-section" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Aura Privée (Unisex)</span> <span>→</span>
+        </a>
+        <a href="#reviews-section" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Celebrity Video Stories</span> <span>→</span>
+        </a>
+        <a href="#candles-section" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Artisanal Soy Candles</span> <span>→</span>
+        </a>
+        <a href="#discovery-builder" class="drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>Discovery Vault (3x10ml)</span> <span>→</span>
+        </a>
+        <a href="javascript:void(0)" class="drawer-link open-quiz-trigger" style="color: var(--gold-primary);" onclick="document.getElementById('mobile-drawer').classList.remove('active'); document.getElementById('drawer-overlay').classList.remove('active');">
+          <span>AI Scent Concierge</span> <span>✨</span>
+        </a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+      <p style="font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase;">AURA FRAGRANCES</p>
+      <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">PARIS • GRASSE • LAHORE • DUBAI • LONDON</p>
+    </div>
+  </div>
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- ==========================================================================
+       HERO BANNER (MATCHING REFERENCE IMAGE 1)
+       ========================================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Maison Aura • The House of Haute Parfumerie</span>
+      <h1 class="hero-title">THE ROYAL FRAGRANCE</h1>
+      <p class="hero-subtitle">
+        Unveil the architecture of pure allure. Hand-blended extraits de parfum infused with 30% to 40% master organic perfume oils, radiating magnetic sillage and eternal memory.
+      </p>
+      <div class="hero-buttons">
+        <a href="#perfumes" class="btn-primary">
+          EXPLORE THE COLLECTION
+        </a>
+        <button class="btn-outline open-quiz-trigger">
+          FIND YOUR AURA
+        </button>
+      </div>
+    </div>
+
+    <!-- Downward Scroll Arrow Indicator (Matching User Screenshot) -->
+    <a href="#men-section" class="scroll-indicator" aria-label="Scroll to Men Fragrances">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="7 13 12 18 17 13"></polyline>
+        <polyline points="7 6 12 11 17 6"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY PORTALS WITH CELEBRITY INFLUENCERS (MATCHING USER SCREENSHOTS 1 & 2)
+       ========================================================================== -->
+  <section class="portal-section">
+    <!-- MEN BANNER (Featuring Male Celebrity Influencer Holding Aura Flacon) -->
+    <div id="men-section" class="portal-card men">
+      <div class="portal-bg"></div>
+      <div class="portal-overlay"></div>
+      <div class="portal-content">
+        <div class="portal-subtag">Aura Homme</div>
+        <h2 class="portal-title">MEN</h2>
+        <div class="portal-subtitle">Extraits de Parfum</div>
+        <a href="#perfumes" class="portal-btn" onclick="document.querySelector('[data-filter=men]').click()">
+          SHOP MEN
+        </a>
+      </div>
+      <a href="#women-section" class="scroll-indicator" aria-label="Scroll to Women Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- WOMEN BANNER (Featuring Female Celebrity Influencer Holding Aura Flacon) -->
+    <div id="women-section" class="portal-card women">
+      <div class="portal-bg"></div>
+      <div class="portal-overlay"></div>
+      <div class="portal-content">
+        <div class="portal-subtag">Aura Femme</div>
+        <h2 class="portal-title">WOMEN</h2>
+        <div class="portal-subtitle">Extraits de Parfum</div>
+        <a href="#perfumes" class="portal-btn" onclick="document.querySelector('[data-filter=women]').click()">
+          SHOP WOMEN
+        </a>
+      </div>
+      <a href="#unisex-section" class="scroll-indicator" aria-label="Scroll to Unisex Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- UNISEX BANNER (Matching Reference Image 2) -->
+    <div id="unisex-section" class="portal-card unisex">
+      <div class="portal-bg"></div>
+      <div class="portal-overlay"></div>
+      <div class="portal-content">
+        <div class="portal-subtag">Aura Privée</div>
+        <h2 class="portal-title">UNISEX</h2>
+        <p style="font-size: 1.05rem; color: #f0f0f4; margin-bottom: 24px; font-weight: 300; letter-spacing: 0.03em;">
+          Transcend gender boundaries with rare smoked agarwood, midnight amber, and solar florals.
+        </p>
+        <a href="#perfumes" class="portal-btn" onclick="document.querySelector('[data-filter=unisex]').click()">
+          SHOP UNISEX
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE SCENT QUIZ PROMO BANNER
+       ========================================================================== -->
+  <section class="quiz-promo-banner">
+    <div class="quiz-promo-content">
+      <span class="section-tag">Bespoke Fragrance Consultation</span>
+      <h2 class="quiz-promo-title">Discover Your Singular Scent Signature</h2>
+      <p class="quiz-promo-desc">
+        Take our 60-second bespoke sensory consultation. Crafted by master perfumers to decode your temperament, aura, and nocturnal preferences into your quintessential bottle.
+      </p>
+      <button class="btn-gold open-quiz-trigger">
+        <span>✨</span> Begin Scent Diagnostic
+      </button>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE 15 SIGNATURE PERFUMES SHOWCASE
+       ========================================================================== -->
+  <section id="perfumes" class="section-wrapper">
+    <div class="section-head">
+      <span class="section-tag">The 15 Signatures</span>
+      <h2 class="section-title">The <span class="gold">Collection</span></h2>
+      <p class="section-desc">
+        Distilled from the earth's most covetable harvests — 25-year aged Cambodian agarwood, dawn-picked Taif roses, Bourbon vanilla, and powdery Florentine iris butter.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All 15 Signatures</button>
+      <button class="filter-btn" data-filter="men">Homme Scents</button>
+      <button class="filter-btn" data-filter="women">Femme Scents</button>
+      <button class="filter-btn" data-filter="unisex">Aura Privée</button>
+      <button class="filter-btn" data-filter="bestseller">Crown Bestsellers</button>
+    </div>
+
+    <!-- Dynamic Perfumes Grid -->
+    <div id="perfumes-grid" class="product-grid">
+      <!-- Injected by app.js with images, bottle notes, and ingredients -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DISCOVERY BOX BUILDER
+       ========================================================================== -->
+  <section id="discovery-builder" class="section-wrapper" style="padding-top: 0;">
+    <div class="discovery-box-section">
+      <span class="section-tag">Bespoke Curation</span>
+      <h2 class="section-title" style="margin-bottom: 8px;">The Aura <span class="gold">Discovery Vault</span></h2>
+      <p class="section-desc" style="max-width: 620px; margin: 0 auto 24px auto;">
+        Curate any three 10ml travel extraits from our 15 signatures. Nestled within an obsidian velvet coffret embossed with liquid gold foil for only Rs. 1,450.
+      </p>
+
+      <!-- 3 Slots UI -->
+      <div class="box-slots-wrap">
+        <div id="box-slot-1" class="box-slot"></div>
+        <div id="box-slot-2" class="box-slot"></div>
+        <div id="box-slot-3" class="box-slot"></div>
+      </div>
+
+      <!-- Sample Picker Buttons -->
+      <div id="sample-buttons-container" class="sample-pick-list">
+        <!-- Injected by app.js -->
+      </div>
+
+      <div>
+        <button id="add-discovery-box-btn" class="btn-gold" onclick="addDiscoveryBoxToCart()" disabled>
+          Select 3 Flacons to Unlock Vault
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SCENTED CANDLES COLLECTION SECTION
+       ========================================================================== -->
+  <section id="candles-section" class="candles-section section-wrapper" style="padding-top: 0;">
+    <div class="candles-banner-feature">
+      <img src="assets/images/candles_banner.jpg" alt="Aura Luxury Candles" class="candles-banner-img">
+      <div class="candles-banner-overlay">
+        <span class="section-tag" style="color: var(--gold-light);">Sanctuary Aromatics</span>
+        <h3>Artisanal Scented Soy Candles</h3>
+        <p>
+          Hand-poured organic coconut & soy wax infused with 12% pure fragrance oil, featuring natural crackling wooden wicks and weighted matte obsidian vessels.
+        </p>
+        <div>
+          <a href="#candles-grid" class="btn-primary" style="padding: 12px 28px;">
+            DISCOVER CANDLES
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 40px;">
+      <span class="section-tag">Sanctuary Aromatics</span>
+      <h2 class="section-title">The <span class="gold">Scented Candle</span> Library</h2>
+      <p class="section-desc">
+        Transform your residence into a grand sanctuary of smoky resins, warm vanilla bean, roasted espresso, and velvet evening florals.
+      </p>
+    </div>
+
+    <!-- Candles Grid -->
+    <div id="candles-grid" class="candle-grid">
+      <!-- Injected by app.js -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RARE BOTANICALS & INGREDIENTS SPOTLIGHT
+       ========================================================================== -->
+  <section id="ingredients-section" class="section-wrapper" style="padding-top: 0;">
+    <div class="section-head">
+      <span class="section-tag">Alchemy of Nature</span>
+      <h2 class="section-title">Rare & <span class="gold">Precious</span> Botanicals</h2>
+      <p class="section-desc">
+        Every bottle of Aura begins with ethically wild-harvested resins, rare flowers, and vintage extracts preserved in glass demijohns.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 32px 24px; border-radius: 12px; text-align: center; transition: var(--transition-smooth);" class="botanical-card">
+        <div style="font-size: 2.4rem; margin-bottom: 14px;">🪵</div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.05em;">25-Year Aged Oud</h4>
+        <p style="font-size: 0.75rem; color: var(--gold-light); margin-bottom: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Koh Kong, Cambodia</p>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">Deeply resinous, smoky, and aristocratic. Slowly distilled over slow-burning wood embers to extract heartwood nectar.</p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 32px 24px; border-radius: 12px; text-align: center; transition: var(--transition-smooth);" class="botanical-card">
+        <div style="font-size: 2.4rem; margin-bottom: 14px;">🌹</div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.05em;">Dawn Taif & Damask Roses</h4>
+        <p style="font-size: 0.75rem; color: var(--gold-light); margin-bottom: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Saudi Arabia & Bulgaria</p>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">Plucked by hand in mist-covered valleys before sunrise to preserve delicate essential honey notes and velvety sweetness.</p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 32px 24px; border-radius: 12px; text-align: center; transition: var(--transition-smooth);" class="botanical-card">
+        <div style="font-size: 2.4rem; margin-bottom: 14px;">✨</div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.05em;">Bourbon Black Vanilla</h4>
+        <p style="font-size: 0.75rem; color: var(--gold-light); margin-bottom: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Sava, Madagascar</p>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">Sun-cured glossy black vanilla pods releasing an intoxicating liquor-sweet aroma with an eternal 24-hour drydown.</p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 32px 24px; border-radius: 12px; text-align: center; transition: var(--transition-smooth);" class="botanical-card">
+        <div style="font-size: 2.4rem; margin-bottom: 14px;">💜</div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.05em;">Florentine Royal Iris</h4>
+        <p style="font-size: 0.75rem; color: var(--gold-light); margin-bottom: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Tuscany, Italy</p>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">Aged for three years in subterranean cellars to yield precious powdery orris butter prized beyond pure gold.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VERIFIED CELEBRITY & INFLUENCER REVIEWS
+       ========================================================================== -->
+  <section id="reviews-section" class="reviews-section section-wrapper" style="padding-top: 0;">
+    <div class="section-head" style="text-align: center; margin-bottom: 24px;">
+      <span class="section-tag">Celebrity & Creator Stories</span>
+      <h2 class="section-title">Verified Customer & <span class="gold">Creator Reviews</span></h2>
+      <p class="section-desc" style="max-width: 650px; margin: 0 auto 10px auto; font-size: 0.95rem; color: var(--gold-light);">
+        Join our community for daily inspiration and a closer look at our creations
+      </p>
+    </div>
+
+    <!-- Instagram Story Avatar Circles Bar -->
+    <div id="story-bubbles-container" class="story-bubbles-wrapper">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+    <!-- Scrollable Reels Track with Prev/Next Controls -->
+    <div class="reels-slider-container">
+      <button class="slider-arrow-btn prev" onclick="scrollReels(-1)" aria-label="Previous Stories">‹</button>
+      <div id="influencer-reels-container" class="reels-slider-track">
+        <!-- Injected dynamically by app.js -->
+      </div>
+      <button class="slider-arrow-btn next" onclick="scrollReels(1)" aria-label="Next Stories">›</button>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRESS & EDITORIAL TESTIMONIALS
+       ========================================================================== -->
+  <section class="heritage-section">
+    <span class="section-tag">Accolades & Recognition</span>
+    <h2 class="section-title">Acclaimed in <span class="gold">Global Publications</span></h2>
+    <p class="section-desc" style="max-width: 680px; margin: 0 auto 30px auto; font-style: italic;">
+      "Aura Fragrances stands as a monumental testament to modern haute parfumerie — offering uncompromised 30% extrait concentration, intoxicating silages, and museum-grade flacon presentation."
+    </p>
+
+    <div class="press-logos">
+      <div class="press-item">VOGUE</div>
+      <div class="press-item">GQ</div>
+      <div class="press-item">HARPER'S BAZAAR</div>
+      <div class="press-item">ELLE</div>
+      <div class="press-item">VANITY FAIR</div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/images/logo.svg" alt="AURA FRAGRANCES" style="height: 68px; width: 68px; border-radius: 50%; margin-bottom: 18px; filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.4));">
+        <p style="font-size: 0.85rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 16px;">
+          Maison Aura crafts transcendent olfactory art formulated with extreme oil concentrations for magnetic presence and unforgettable sophistication.
+        </p>
+        <div style="color: var(--gold-light); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;">
+          PARIS • GRASSE • LAHORE • DUBAI • LONDON
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>The Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#perfumes">The 15 Signatures</a></li>
+          <li><a href="#men-section">Aura Homme</a></li>
+          <li><a href="#women-section">Aura Femme</a></li>
+          <li><a href="#unisex-section">Aura Privée</a></li>
+          <li><a href="#candles-section">Artisanal Soy Candles</a></li>
+          <li><a href="#discovery-builder">Custom Discovery Vault (3x10ml)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Client Concierge</h4>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)" onclick="openWhatsAppVIP()">WhatsApp VIP Concierge</a></li>
+          <li><a href="javascript:void(0)" class="open-quiz-trigger">Fragrance Personality Finder</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Free Express Delivery across Pakistan on orders over Rs. 4,000')">Domestic & Worldwide Shipping</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('30-Day Luxury Authenticity & Return Guarantee')">Returns & Authenticity</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('Voucher ROYAL20 automatically applied in bag!')">VIP Privileges & Gifting</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aura VIP Circle</h4>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">
+          Receive private invitations to limited harvest batches and enjoy 20% off your inaugural order with code <strong class="gold">ROYAL20</strong>.
+        </p>
+        <form onsubmit="event.preventDefault(); showToast('Welcome to the Aura VIP Circle! Code ROYAL20 is now active.');" style="display: flex; gap: 8px;">
+          <input type="email" placeholder="Your luxury email" required style="flex-grow: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); padding: 11px 14px; border-radius: 4px; color: #fff; font-size: 0.82rem; outline: none;">
+          <button type="submit" class="btn-primary" style="padding: 0 18px; font-size: 0.75rem;">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 AURA FRAGRANCES MAISON. All Rights Reserved.</div>
+      <div style="display: flex; gap: 20px;">
+        <span>Privacy Policy</span>
+        <span>Certificate of Authenticity</span>
+        <span>Formulated in Grasse & Handcrafted in Pakistan</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP VIP CONCIERGE BUTTON (MATCHING REFERENCE MOCKUP)
+       ========================================================================== -->
+  <a href="javascript:void(0)" onclick="openWhatsAppVIP()" class="whatsapp-float" aria-label="Chat with Aura Fragrance Sommelier">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 2a13.9 13.9 0 0 0-12 21l-1.9 6.9 7.1-1.9A14 14 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.4A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.2-.7s.3-.4.5-.6a2.2 2.2 0 0 0 .3-.5.7.7 0 0 0 0-.6c-.1-.2-.8-2-1.1-2.7s-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2 7.5 7.5 0 0 0 1.6 4 17.2 17.2 0 0 0 6.6 5.8 22.4 22.4 0 0 0 2.2.8 5.3 5.3 0 0 0 2.4.2 4 4 0 0 0 2.6-1.8 3.2 3.2 0 0 0 .2-1.8c-.1-.2-.4-.3-.7-.5z"></path>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with Aura Sommelier</span>
+  </a>
+
+  <!-- ==========================================================================
+       CART SLIDE-OUT DRAWER
+       ========================================================================== -->
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Luxury Bag</h3>
+      <button id="close-cart-btn" class="drawer-close">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="shipping-progress-wrap">
+      <div id="shipping-progress-msg" class="shipping-msg">Add Rs. 4,000 to unlock Free Luxury Delivery</div>
+      <div class="shipping-bar">
+        <div id="shipping-progress-fill" class="shipping-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items-container" class="cart-items-list">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="cart-footer">
+      <div class="promo-row">
+        <input type="text" id="promo-input" class="promo-input" placeholder="Voucher Code (e.g. ROYAL20)">
+        <button id="apply-promo-btn" class="promo-btn">Apply</button>
+      </div>
+
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">Rs. 0</span>
+      </div>
+
+      <div id="cart-discount-row" class="cart-subtotal-row" style="display: none; color: #ff6b6b;">
+        <span>VIP Privileged Savings (20%)</span>
+        <span id="cart-discount-val">-Rs. 0</span>
+      </div>
+
+      <div class="cart-total-row">
+        <span>Total Payable</span>
+        <span id="cart-final-total" class="gold">Rs. 0</span>
+      </div>
+
+      <button id="checkout-btn" class="btn-checkout">
+        Proceed to Secure Checkout
+      </button>
+    </div>
+  </div>
+  <div id="cart-overlay" class="drawer-overlay"></div>
+
+  <!-- ==========================================================================
+       QUICK VIEW & DETAIL MODAL
+       ========================================================================== -->
+  <div id="quickview-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="close-quickview-btn" class="modal-close">&times;</button>
+      <div id="quickview-modal-body">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCENT PERSONALITY QUIZ MODAL
+       ========================================================================== -->
+  <div id="quiz-modal" class="modal-overlay">
+    <div class="modal-box" style="max-width: 650px;">
+      <button id="close-quiz-btn" class="modal-close">&times;</button>
+      <div class="quiz-box">
+        <div class="quiz-progress-bar">
+          <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 33%;"></div>
+        </div>
+        <div id="quiz-step-container">
+          <!-- Injected by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LIVE SEARCH MODAL OVERLAY
+       ========================================================================== -->
+  <div id="search-modal" class="search-modal">
+    <div style="display: flex; justify-content: flex-end;">
+      <button id="close-search-btn" class="modal-close" style="position: static;">&times;</button>
+    </div>
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <input type="text" id="search-input" class="search-input" placeholder="Search by name, accords, notes (Oud, Vanilla, Rose, Santal, Amber)...">
+      </div>
+      <div id="search-results" class="search-results-grid">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

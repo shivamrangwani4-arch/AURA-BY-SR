@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Liquid 24K Gold Gradients -->
+    <linearGradient id="goldCircularGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff9e6"/>
+      <stop offset="20%" stop-color="#f5d77f"/>
+      <stop offset="45%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#aa7c1e"/>
+      <stop offset="100%" stop-color="#6e4d08"/>
+    </linearGradient>
+
+    <linearGradient id="goldShineBright" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#996e14"/>
+      <stop offset="25%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#f5d77f"/>
+      <stop offset="100%" stop-color="#aa7c1e"/>
+    </linearGradient>
+
+    <radialGradient id="sealBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141419"/>
+      <stop offset="70%" stop-color="#09090c"/>
+      <stop offset="100%" stop-color="#040405"/>
+    </radialGradient>
+
+    <filter id="auraGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Circular Text Paths (Radius 156) -->
+    <!-- Top Arc Path: Sweep clockwise from left (180 deg) to right (0 deg) -->
+    <path id="textArcTop" d="M 44,200 A 156,156 0 0,1 356,200" fill="none"/>
+    <!-- Bottom Arc Path: Sweep clockwise from right (0 deg) to left (180 deg) -->
+    <path id="textArcBottom" d="M 356,200 A 156,156 0 0,1 44,200" fill="none"/>
+  </defs>
+
+  <!-- Circular Base Disc -->
+  <circle cx="200" cy="200" r="196" fill="url(#sealBg)" stroke="url(#goldCircularGrad)" stroke-width="2.5"/>
+
+  <!-- Outer Concentric Beaded Rims -->
+  <circle cx="200" cy="200" r="188" fill="none" stroke="url(#goldCircularGrad)" stroke-width="1.2" stroke-dasharray="2,4" opacity="0.8"/>
+  <circle cx="200" cy="200" r="176" fill="none" stroke="url(#goldCircularGrad)" stroke-width="1.8" opacity="0.9"/>
+  <circle cx="200" cy="200" r="136" fill="none" stroke="url(#goldCircularGrad)" stroke-width="1.5" opacity="0.85"/>
+  <circle cx="200" cy="200" r="130" fill="none" stroke="url(#goldCircularGrad)" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Four Cardinal Accent Diamonds on Ring -->
+  <polygon points="200,10 204,18 200,26 196,18" fill="url(#goldShineBright)"/>
+  <polygon points="390,200 382,204 374,200 382,196" fill="url(#goldShineBright)"/>
+  <polygon points="200,390 196,382 200,374 204,382" fill="url(#goldShineBright)"/>
+  <polygon points="10,200 18,196 26,200 18,204" fill="url(#goldShineBright)"/>
+
+  <!-- Arced Typography Along Upper Path -->
+  <text font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="600" fill="url(#goldCircularGrad)" letter-spacing="4.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      ✦ MAISON DE HAUTE PARFUMERIE ✦
+    </textPath>
+  </text>
+
+  <!-- Arced Typography Along Lower Path -->
+  <text font-family="'Montserrat', sans-serif" font-size="9.5" font-weight="600" fill="url(#goldCircularGrad)" letter-spacing="4">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      PARIS • LAHORE • GRASSE • DUBAI
+    </textPath>
+  </text>
+
+  <!-- Central Crest Content -->
+  <g transform="translate(200, 200)">
+    <!-- Imperial Crown Above Brand -->
+    <g transform="translate(0, -68) scale(0.72)">
+      <path d="M -36,-5 L -20,16 L 0,-16 L 20,16 L 36,-5 L 32,24 L -32,24 Z" fill="url(#goldShineBright)" filter="url(#auraGlow)"/>
+      <circle cx="-36" cy="-8" r="4" fill="url(#goldCircularGrad)"/>
+      <circle cx="0" cy="-20" r="5" fill="#ffffff"/>
+      <circle cx="36" cy="-8" r="4" fill="url(#goldCircularGrad)"/>
+      <rect x="-30" y="25" width="60" height="5" rx="2.5" fill="url(#goldCircularGrad)"/>
+      <circle cx="-16" cy="27.5" r="1.8" fill="#fff"/>
+      <circle cx="0" cy="27.5" r="1.8" fill="#fff"/>
+      <circle cx="16" cy="27.5" r="1.8" fill="#fff"/>
+    </g>
+
+    <!-- Prominent Royal Monogram Ribbon / Star -->
+    <g transform="translate(0, -18)">
+      <polygon points="0,-10 3,-3 10,-3 4,2 6,9 0,5 -6,9 -4,2 -10,-3 -3,-3" fill="url(#goldShineBright)"/>
+    </g>
+
+    <!-- Majestic Center Brand Name: A U R A -->
+    <text x="0" y="16" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="44" font-weight="900" fill="url(#goldShineBright)" filter="url(#auraGlow)" text-anchor="middle" letter-spacing="7">
+      AURA
+    </text>
+
+    <!-- Subtitle: FRAGRANCES -->
+    <text x="0" y="38" font-family="'Montserrat', sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="9" opacity="0.95">
+      FRAGRANCES
+    </text>
+
+    <!-- Luxury Laurel Wings & Base Star -->
+    <path d="M -50,50 Q -25,64 0,66 Q 25,64 50,50 Q 25,59 0,60 Q -25,59 -50,50 Z" fill="url(#goldCircularGrad)" opacity="0.85"/>
+    <polygon points="0,58 -3.5,64 0,70 3.5,64" fill="url(#goldShineBright)"/>
+
+    <!-- Established Text -->
+    <text x="0" y="80" font-family="'Montserrat', sans-serif" font-size="7.5" font-weight="600" fill="url(#goldCircularGrad)" text-anchor="middle" letter-spacing="3" opacity="0.8">
+      EDITION PRIVÉE
+    </text>
+  </g>
+</svg>
